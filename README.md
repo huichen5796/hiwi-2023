@@ -7,3 +7,5 @@ DONE:
 TODO:
 
 - Train model in LUIS
+  - training-code anpassen
+  - loss_fn anpassen
