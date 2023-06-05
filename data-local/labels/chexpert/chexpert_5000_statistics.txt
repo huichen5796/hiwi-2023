@@ -1,0 +1,158 @@
+ssh://ihler@130.75.144.207:22/home/ihler/anaconda3/envs/diss/bin/python -u /home/ihler/RemoteProjects/diss/data-local/bin/create_binarized_datasest_chexpert.py
+../labels/chexpert/chexpert_5000_00.csv
+/home/ihler/RemoteProjects/diss/data-local/bin/create_binarized_datasest_chexpert.py:95: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  print(f'{seed: } male mean: {df_ms.mean()}')
+ 0 male mean: Age                 60.3556
+Atelectasis          0.3320
+Cardiomegaly         0.1656
+Consolidation        0.2136
+Edema                0.3420
+Pleural Effusion     0.4608
+dtype: float64
+/home/ihler/RemoteProjects/diss/data-local/bin/create_binarized_datasest_chexpert.py:96: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  print(f'{seed: } female mean: {df_fs.mean()}')
+ 0 female mean: Age                 62.3856
+Atelectasis          0.3172
+Cardiomegaly         0.1604
+Consolidation        0.1980
+Edema                0.3680
+Pleural Effusion     0.4820
+dtype: float64
+../labels/chexpert/chexpert_5000_01.csv
+ 1 male mean: Age                 60.9156
+Atelectasis          0.3328
+Cardiomegaly         0.1744
+Consolidation        0.2220
+Edema                0.3828
+Pleural Effusion     0.4700
+dtype: float64
+ 1 female mean: Age                 62.1408
+Atelectasis          0.3316
+Cardiomegaly         0.1412
+Consolidation        0.2160
+Edema                0.3520
+Pleural Effusion     0.4728
+dtype: float64
+../labels/chexpert/chexpert_5000_02.csv
+ 2 male mean: Age                 61.7648
+Atelectasis          0.3344
+Cardiomegaly         0.1756
+Consolidation        0.2084
+Edema                0.3548
+Pleural Effusion     0.4612
+dtype: float64
+ 2 female mean: Age                 61.9016
+Atelectasis          0.3208
+Cardiomegaly         0.1532
+Consolidation        0.1992
+Edema                0.3720
+Pleural Effusion     0.4740
+dtype: float64
+../labels/chexpert/chexpert_5000_03.csv
+ 3 male mean: Age                 60.3464
+Atelectasis          0.3284
+Cardiomegaly         0.1588
+Consolidation        0.2192
+Edema                0.3504
+Pleural Effusion     0.4624
+dtype: float64
+ 3 female mean: Age                 62.2712
+Atelectasis          0.3140
+Cardiomegaly         0.1448
+Consolidation        0.2024
+Edema                0.3768
+Pleural Effusion     0.4752
+dtype: float64
+../labels/chexpert/chexpert_5000_04.csv
+ 4 male mean: Age                 60.6016
+Atelectasis          0.3320
+Cardiomegaly         0.1724
+Consolidation        0.2020
+Edema                0.3604
+Pleural Effusion     0.4608
+dtype: float64
+ 4 female mean: Age                 61.9960
+Atelectasis          0.3228
+Cardiomegaly         0.1516
+Consolidation        0.2048
+Edema                0.3600
+Pleural Effusion     0.4904
+dtype: float64
+../labels/chexpert/chexpert_5000_05.csv
+ 5 male mean: Age                 60.9084
+Atelectasis          0.3392
+Cardiomegaly         0.1552
+Consolidation        0.2136
+Edema                0.3712
+Pleural Effusion     0.4736
+dtype: float64
+ 5 female mean: Age                 61.5344
+Atelectasis          0.3352
+Cardiomegaly         0.1536
+Consolidation        0.2044
+Edema                0.3680
+Pleural Effusion     0.4812
+dtype: float64
+../labels/chexpert/chexpert_5000_06.csv
+ 6 male mean: Age                 60.7516
+Atelectasis          0.3260
+Cardiomegaly         0.1812
+Consolidation        0.2040
+Edema                0.3724
+Pleural Effusion     0.4664
+dtype: float64
+ 6 female mean: Age                 62.5812
+Atelectasis          0.3148
+Cardiomegaly         0.1560
+Consolidation        0.1852
+Edema                0.3828
+Pleural Effusion     0.4788
+dtype: float64
+../labels/chexpert/chexpert_5000_07.csv
+ 7 male mean: Age                 61.5216
+Atelectasis          0.3452
+Cardiomegaly         0.1664
+Consolidation        0.2080
+Edema                0.3648
+Pleural Effusion     0.4784
+dtype: float64
+ 7 female mean: Age                 62.1952
+Atelectasis          0.3200
+Cardiomegaly         0.1576
+Consolidation        0.1984
+Edema                0.3736
+Pleural Effusion     0.4796
+dtype: float64
+../labels/chexpert/chexpert_5000_08.csv
+ 8 male mean: Age                 60.3556
+Atelectasis          0.3364
+Cardiomegaly         0.1724
+Consolidation        0.2004
+Edema                0.3628
+Pleural Effusion     0.4792
+dtype: float64
+ 8 female mean: Age                 62.3388
+Atelectasis          0.3212
+Cardiomegaly         0.1680
+Consolidation        0.1932
+Edema                0.3692
+Pleural Effusion     0.4816
+dtype: float64
+../labels/chexpert/chexpert_5000_09.csv
+ 9 male mean: Age                 60.6088
+Atelectasis          0.3444
+Cardiomegaly         0.1468
+Consolidation        0.2116
+Edema                0.3632
+Pleural Effusion     0.4720
+dtype: float64
+ 9 female mean: Age                 61.9708
+Atelectasis          0.3196
+Cardiomegaly         0.1508
+Consolidation        0.2044
+Edema                0.3664
+Pleural Effusion     0.4808
+dtype: float64
+
+Process finished with exit code 0
+
