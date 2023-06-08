@@ -4,7 +4,7 @@ import os
 import datetime
 import re
 import time
-
+from onehot_transfer import onehot_trans
 
 class Corrector:
     def __init__(self, original_dir, out_dir, correct_data):
