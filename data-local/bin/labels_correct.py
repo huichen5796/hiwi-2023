@@ -7,13 +7,13 @@ import time
 
 
 class Corrector:
-    def __init__(self):
-        self.original_dir = 'data-local/labels/chexpert'
-        self.out_dir = 'data-local/labels/chexpert_correct_labels'
+    def __init__(self, original_dir, out_dir, correct_data):
+        self.original_dir = original_dir
+        self.out_dir = out_dir
         self.csv_list = []
         self.class_list = ['Atelectasis', 'Cardiomegaly',
                            'Consolidation', 'Edema', 'Pleural Effusion']
-        self.correct_data = pandas.read_csv('data-local/chexpert_train.csv')
+        self.correct_data = pandas.read_csv(correct_data)
 
     def creat_out_dir(self):
         print('--------creat_out_dir---------')
@@ -41,10 +41,14 @@ class Corrector:
 
     def get_csv_list(self):
         print('--------get_csv_list---------')
-        files = os.listdir(self.original_dir)
-        pattern = r".*\d{2}\.(csv|txt)$"
-        self.csv_list = [os.path.join(self.original_dir, file)
-                         for file in files if re.match(pattern, file)]
+
+        if os.path.isfile(self.original_dir):
+            self.csv_list = [self.original_dir]
+        elif os.path.isdir(self.original_dir):
+            files = os.listdir(self.original_dir)
+            pattern = r".*\d{2}\.(csv|txt)$"
+            self.csv_list = [os.path.join(self.original_dir, file)
+                            for file in files if re.match(pattern, file)]
         print(f'found {len(self.csv_list)} csvs and txts.')
 
     def write_log(self, log_info):
@@ -92,6 +96,8 @@ class Corrector:
 
 
 if __name__ == '__main__':
-    do = Corrector()
+    do = Corrector(original_dir='data-local/chexpert_frap_binary_valid.csv',
+                   out_dir='data-local/labels/chexpert_correct_labels',
+                   correct_data = 'data-local/chexpert_valid.csv')
     do.run()
     # pass
