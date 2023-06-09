@@ -1,0 +1,29 @@
+2023-06-09 17:10:44.828577 data-local\labels\chexpert\chexpert_5000_00.csv: change class Consolidation of CheXpert-v1.0-small/train/patient40810/study4/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.852586 data-local\labels\chexpert\chexpert_5000_00.csv: change class Atelectasis of CheXpert-v1.0-small/train/patient32608/study2/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.860586 data-local\labels\chexpert\chexpert_5000_00.csv: change class Cardiomegaly of CheXpert-v1.0-small/train/patient32608/study2/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.870127 data-local\labels\chexpert\chexpert_5000_00.csv: change class Consolidation of CheXpert-v1.0-small/train/patient32608/study2/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.886115 data-local\labels\chexpert\chexpert_5000_00.csv: change class Pleural Effusion of CheXpert-v1.0-small/train/patient32608/study2/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.927069 data-local\labels\chexpert\chexpert_5000_00.csv: change class Atelectasis of CheXpert-v1.0-small/train/patient15293/study16/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.933072 data-local\labels\chexpert\chexpert_5000_00.csv: change class Cardiomegaly of CheXpert-v1.0-small/train/patient15293/study16/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.939072 data-local\labels\chexpert\chexpert_5000_00.csv: change class Consolidation of CheXpert-v1.0-small/train/patient15293/study16/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.947070 data-local\labels\chexpert\chexpert_5000_00.csv: change class Edema of CheXpert-v1.0-small/train/patient15293/study16/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.967582 data-local\labels\chexpert\chexpert_5000_00.csv: change class Cardiomegaly of CheXpert-v1.0-small/train/patient11393/study7/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.975600 data-local\labels\chexpert\chexpert_5000_00.csv: change class Consolidation of CheXpert-v1.0-small/train/patient11393/study7/view1_frontal.jpg to nan 
+2023-06-09 17:10:44.997584 data-local\labels\chexpert\chexpert_5000_00.csv: change class Atelectasis of CheXpert-v1.0-small/train/patient13162/study42/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.004585 data-local\labels\chexpert\chexpert_5000_00.csv: change class Cardiomegaly of CheXpert-v1.0-small/train/patient13162/study42/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.018585 data-local\labels\chexpert\chexpert_5000_00.csv: change class Edema of CheXpert-v1.0-small/train/patient13162/study42/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.033583 data-local\labels\chexpert\chexpert_5000_00.csv: change class Atelectasis of CheXpert-v1.0-small/train/patient26726/study2/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.040584 data-local\labels\chexpert\chexpert_5000_00.csv: change class Cardiomegaly of CheXpert-v1.0-small/train/patient26726/study2/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.047582 data-local\labels\chexpert\chexpert_5000_00.csv: change class Consolidation of CheXpert-v1.0-small/train/patient26726/study2/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.056596 data-local\labels\chexpert\chexpert_5000_00.csv: change class Edema of CheXpert-v1.0-small/train/patient26726/study2/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.062589 data-local\labels\chexpert\chexpert_5000_00.csv: change class Pleural Effusion of CheXpert-v1.0-small/train/patient26726/study2/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.070128 data-local\labels\chexpert\chexpert_5000_00.csv: change class Atelectasis of CheXpert-v1.0-small/train/patient42640/study3/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.076101 data-local\labels\chexpert\chexpert_5000_00.csv: change class Cardiomegaly of CheXpert-v1.0-small/train/patient42640/study3/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.083126 data-local\labels\chexpert\chexpert_5000_00.csv: change class Consolidation of CheXpert-v1.0-small/train/patient42640/study3/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.090102 data-local\labels\chexpert\chexpert_5000_00.csv: change class Edema of CheXpert-v1.0-small/train/patient42640/study3/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.096101 data-local\labels\chexpert\chexpert_5000_00.csv: change class Pleural Effusion of CheXpert-v1.0-small/train/patient42640/study3/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.109101 data-local\labels\chexpert\chexpert_5000_00.csv: change class Atelectasis of CheXpert-v1.0-small/train/patient47612/study1/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.126780 data-local\labels\chexpert\chexpert_5000_00.csv: change class Consolidation of CheXpert-v1.0-small/train/patient47612/study1/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.135318 data-local\labels\chexpert\chexpert_5000_00.csv: change class Edema of CheXpert-v1.0-small/train/patient47612/study1/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.160173 data-local\labels\chexpert\chexpert_5000_00.csv: change class Consolidation of CheXpert-v1.0-small/train/patient06182/study6/view1_frontal.jpg to nan 
+2023-06-09 17:10:45.173379 data-local\labels\chexpert\chexpert_5000_00.csv: change class Pleural Effusion of CheXpert-v1.0-small/train/patient06182/study6/view1_frontal.jpg to nan 

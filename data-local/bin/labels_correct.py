@@ -81,13 +81,13 @@ class Corrector:
 
     def onehot_trans(self, label):
         if label == 1.0:
-            return np.array([1.0, 0.0, 0.0, 0.0])
+            return [1.0, 0.0, 0.0, 0.0]
         elif label == 0.0:
-            return np.array([0.0, 1.0, 0.0, 0.0])
+            return [0.0, 1.0, 0.0, 0.0]
         elif label == -1.0:
-            return np.array([0.0, 0.0, 1.0, 0.0])
+            return [0.0, 0.0, 1.0, 0.0]
         elif pandas.isna(label):
-            return np.array([0.0, 0.0, 0.0, 1.0])
+            return [0.0, 0.0, 0.0, 1.0]
         else:
             return label
 
@@ -110,8 +110,8 @@ class Corrector:
 
 
 if __name__ == '__main__':
-    do = Corrector(original_dir='data-local/chexpert_frap_binary_valid.csv',
-                   out_dir='data-local/labels/chexpert_correct_labels_valid',
-                   correct_data='data-local/chexpert_valid.csv')
+    do = Corrector(original_dir='data-local\labels\chexpert',
+                   out_dir='data-local/labels/chexpert_correct_labels_list',
+                   correct_data='data-local/chexpert_train.csv')
     do.run()
     # pass
