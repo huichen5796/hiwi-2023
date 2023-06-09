@@ -1,10 +1,2 @@
 Path,Sex,Age,Atelectasis,Cardiomegaly,Consolidation,Edema,Pleural Effusion
 CheXpert-v1.0-small/train/patient40810/study4/view1_frontal.jpg,Male,74,"[1.0, 0.0, 0.0, 0.0]","[1.0, 0.0, 0.0, 0.0]","[0.0, 0.0, 0.0, 1.0]","[1.0, 0.0, 0.0, 0.0]","[1.0, 0.0, 0.0, 0.0]"
-CheXpert-v1.0-small/train/patient32608/study2/view1_frontal.jpg,Male,62,"[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[1.0, 0.0, 0.0, 0.0]","[0.0, 0.0, 0.0, 1.0]"
-CheXpert-v1.0-small/train/patient15293/study16/view1_frontal.jpg,Male,44,"[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 1.0, 0.0, 0.0]"
-CheXpert-v1.0-small/train/patient11393/study7/view1_frontal.jpg,Male,68,"[1.0, 0.0, 0.0, 0.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[1.0, 0.0, 0.0, 0.0]","[1.0, 0.0, 0.0, 0.0]"
-CheXpert-v1.0-small/train/patient13162/study42/view1_frontal.jpg,Male,30,"[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[1.0, 0.0, 0.0, 0.0]","[0.0, 0.0, 0.0, 1.0]","[1.0, 0.0, 0.0, 0.0]"
-CheXpert-v1.0-small/train/patient26726/study2/view1_frontal.jpg,Male,60,"[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]"
-CheXpert-v1.0-small/train/patient42640/study3/view1_frontal.jpg,Male,80,"[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]"
-CheXpert-v1.0-small/train/patient47612/study1/view1_frontal.jpg,Male,61,"[0.0, 0.0, 0.0, 1.0]","[0.0, 1.0, 0.0, 0.0]","[0.0, 0.0, 0.0, 1.0]","[0.0, 0.0, 0.0, 1.0]","[1.0, 0.0, 0.0, 0.0]"
-CheXpert-v1.0-small/train/patient06182/study6/view1_frontal.jpg,Male,63,"[1.0, 0.0, 0.0, 0.0]","[1.0, 0.0, 0.0, 0.0]","[0.0, 0.0, 0.0, 1.0]","[1.0, 0.0, 0.0, 0.0]","[0.0, 0.0, 0.0, 1.0]"

@@ -224,7 +224,6 @@ class CheXpert(DatasetFromFile):
     def flatten(self, item):
         out = []
         for cla in item:
-            print(cla)
             out.extend(eval(cla))
         return out
 
