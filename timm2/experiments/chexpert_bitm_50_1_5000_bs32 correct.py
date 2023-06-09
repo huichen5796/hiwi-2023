@@ -5,7 +5,7 @@ from timm.models import safe_model_name
 def parameters(): 
     defaults = {
         'dataset': 'chexpert',
-        'num-classes': 5,
+        'num-classes': 20,
         'data-dir': '/home/medssl/data/',
         'data_file_val': 'data-local\labels\chexpert_correct_labels_06_08_1128\chexpert_frap_binary_valid.csv',
 

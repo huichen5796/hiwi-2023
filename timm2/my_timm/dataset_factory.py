@@ -212,10 +212,15 @@ class CheXpert(DatasetFromFile):
         df = pd.read_csv(self.file)
         imgfiles = df['Path'].values
         targets = df[self.classes].values
-        targets = np.array([eval(item) for item in targets], dtype=np.float64).flatten()
+        targets = np.array([self.flatten(item) for item in targets], dtype=np.float64)
         samples = [s for s in zip(imgfiles, targets)]
-        print(samples)
         return samples
+        
+    def flatten(self, item):
+        out = []
+        for cla in item:
+          out.extend(eval(cla))
+        return out
 
     def relabel_dataset(self, label_file, no_label_value):
         df = pd.read_csv(label_file)

@@ -243,7 +243,7 @@ def main(args):
         crop_pct=data_config['crop_pct'],
         pin_memory=args.pin_mem,
     )
-    '''
+
     # setup loss function
     if args.bce:
         train_loss_fn = BinaryCrossEntropy()
@@ -257,13 +257,6 @@ def main(args):
 
     train_loss_fn = train_loss_fn.cuda()
     validate_loss_fn = BinaryCrossEntropy().cuda()
-````'''
-
-    # setup loss function
-    def train_loss_fn(output, target):
-        return LabelSmoothingCrossEntropy(output, target).cuda()
-    def validate_loss_fn(output, target): 
-        return LabelSmoothingCrossEntropy(output, target).cuda()
 
     # setup checkpoint saver and eval metric tracking
     eval_metric = args.eval_metric
