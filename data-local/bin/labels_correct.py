@@ -4,7 +4,6 @@ import os
 import datetime
 import re
 import time
-from onehot_transfer import onehot_trans
 import numpy as np
 
 class Corrector:
@@ -79,6 +78,7 @@ class Corrector:
         self.onehot_label(df).to_csv(self.out_dir + '/' + os.path.basename(csv_path), index=False)
     
     def onehot_label(self, df):
+        print('--------onehot-labeling--------')
         df_onehot = df.apply(lambda x: np.where(x == 1.0, np.array([1.0, 0.0, 0.0, 0.0]), x))
         df_onehot = df_onehot.apply(lambda x: np.where(x == 0.0, np.array([0.0, 1.0, 0.0, 0.0]), x))
         df_onehot = df_onehot.apply(lambda x: np.where(x == -1.0, np.array([0.0, 0.0, 1.0, 0.0]), x))
