@@ -212,6 +212,7 @@ class CheXpert(DatasetFromFile):
         df = pd.read_csv(self.file)
         imgfiles = df['Path'].values
         targets = df[self.classes].values
+        targets = np.array([eval(item) for item in targets], dtype=np.float64).flatten()
         samples = [s for s in zip(imgfiles, targets)]
         print(samples)
         return samples
