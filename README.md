@@ -17,7 +17,11 @@ DONE:
         else:
             return label
    ```
-- so a data will be saved in csv as form:
+- so a data 
+  ```csv
+  CheXpert-v1.0-small/train/patient40810/study4/view1_frontal.jpg,Male,74,1.0,1.0,nan,1.0,1.0
+  ```
+  will be saved in csv as form:
   ```csv
   Path,Sex,Age,Atelectasis,Cardiomegaly,Consolidation,Edema,Pleural Effusion
   CheXpert-v1.0-small/train/patient40810/study4/view1_frontal.jpg,Male,74,"[1.0, 0.0, 0.0, 0.0]","[1.0, 0.0, 0.0, 0.0]","[0.0, 0.0, 0.0, 1.0]","[1.0, 0.0, 0.0, 0.0]","[1.0, 0.0, 0.0, 0.0]"
