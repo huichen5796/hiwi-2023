@@ -31,8 +31,8 @@ import matplotlib.pyplot as plt
 
 from my_timm import create_dataset, create_dataset_from_file, create_loader, Mixup, FastCollateMixup
 from timm.data import resolve_data_config, AugMixDataset
-from timm.models import create_model, safe_model_name, resume_checkpoint, load_checkpoint, \
-    convert_splitbn_model, model_parameters
+from timm.models import create_model, safe_model_name, resume_checkpoint, load_checkpoint, model_parameters
+from timm.models.layers import convert_splitbn_model
 from timm.utils import *
 from timm.loss import *
 from timm.optim import create_optimizer_v2, optimizer_kwargs
