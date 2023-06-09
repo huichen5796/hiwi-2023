@@ -6,6 +6,7 @@ import re
 import time
 import numpy as np
 
+
 class Corrector:
     def __init__(self, original_dir, out_dir, correct_data):
         self.original_dir = original_dir
@@ -48,7 +49,7 @@ class Corrector:
             files = os.listdir(self.original_dir)
             pattern = r".*\d{2}\.(csv|txt)$"
             self.csv_list = [os.path.join(self.original_dir, file)
-                            for file in files if re.match(pattern, file)]
+                             for file in files if re.match(pattern, file)]
         print(f'found {len(self.csv_list)} csvs and txts.')
 
     def write_log(self, log_info):
@@ -74,17 +75,21 @@ class Corrector:
             dur = time.perf_counter() - start
             print("\r{}/{}|{}{}|{:.2f}s".format((i+1), len(df),
                   finish, need_do, dur), end='', flush=True)
+        df_onehot = df.applymap(self.onehot_trans)
+        df_onehot.to_csv(self.out_dir + '/' +
+                         os.path.basename(csv_path), index=False)
 
-        self.onehot_label(df).to_csv(self.out_dir + '/' + os.path.basename(csv_path), index=False)
-    
-    def onehot_label(self, df):
-        print('--------onehot-labeling--------')
-        df_onehot = df.apply(lambda x: np.where(x == 1.0, np.array([1.0, 0.0, 0.0, 0.0]), x))
-        df_onehot = df_onehot.apply(lambda x: np.where(x == 0.0, np.array([0.0, 1.0, 0.0, 0.0]), x))
-        df_onehot = df_onehot.apply(lambda x: np.where(x == -1.0, np.array([0.0, 0.0, 1.0, 0.0]), x))
-        df_onehot = df_onehot.fillna(np.array([0.0, 0.0, 0.0, 1.0]))
-
-        return df_onehot
+    def onehot_trans(self, label):
+        if label == 1.0:
+            return np.array([1.0, 0.0, 0.0, 0.0])
+        elif label == 0.0:
+            return np.array([0.0, 1.0, 0.0, 0.0])
+        elif label == -1.0:
+            return np.array([0.0, 0.0, 1.0, 0.0])
+        elif pandas.isna(label):
+            return np.array([0.0, 0.0, 0.0, 1.0])
+        else:
+            return label
 
     def correct_in_batch(self):
         for csv_path in self.csv_list:
@@ -106,7 +111,7 @@ class Corrector:
 
 if __name__ == '__main__':
     do = Corrector(original_dir='data-local/chexpert_frap_binary_valid.csv',
-                   out_dir='data-local/labels/chexpert_correct_labels',
-                   correct_data = 'data-local/chexpert_valid.csv')
+                   out_dir='data-local/labels/chexpert_correct_labels_valid',
+                   correct_data='data-local/chexpert_valid.csv')
     do.run()
     # pass
