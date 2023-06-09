@@ -213,6 +213,7 @@ class CheXpert(DatasetFromFile):
         imgfiles = df['Path'].values
         targets = df[self.classes].values
         samples = [s for s in zip(imgfiles, targets)]
+        print(samples)
         return samples
 
     def relabel_dataset(self, label_file, no_label_value):
