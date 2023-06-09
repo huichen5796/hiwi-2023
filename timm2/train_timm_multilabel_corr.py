@@ -90,12 +90,10 @@ def main(args):
         scriptable=args.torchscript,
         checkpoint_path=args.initial_checkpoint)
 
-   # get last layer of model
-    num_features = model.fc.in_features
     # new a new output layer
-    new_fc = torch.nn.Linear(num_features, 4)  # 适应四种可能性的新输出层
+    new_fc = torch.nn.Linear(args.num_classes, 4)
     # replace the fc out layer
-    model.fc = new_fc
+    model.head.fc = new_fc
 
     if args.num_classes is None:
         assert hasattr(model, 'num_classes'), 'Model must have `num_classes` attr if not set on cmd line/config.'
