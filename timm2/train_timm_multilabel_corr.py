@@ -258,7 +258,7 @@ def main(args):
     def train_loss_fn(output, target):
         return LabelSmoothingCrossEntropy(output, onehot_trans(target)).cuda()
     def validate_loss_fn(output, target): 
-        LabelSmoothingCrossEntropy(output, onehot_trans(target)).cuda()
+        return LabelSmoothingCrossEntropy(output, onehot_trans(target)).cuda()
 
     # setup checkpoint saver and eval metric tracking
     eval_metric = args.eval_metric

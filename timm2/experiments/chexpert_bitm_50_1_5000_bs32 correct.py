@@ -1,4 +1,4 @@
-import train_timm_multilabel
+import train_timm_multilabel_corr
 from cli import parse_dict_args
 from timm.utils import *
 from timm.models import safe_model_name
@@ -149,7 +149,7 @@ def run(dataset, model,  n_labels, data_seed, **kwargs):
 
 
     args = parse_dict_args(**adapted_args, **kwargs)
-    train_timm_multilabel.main(args)
+    train_timm_multilabel_corr.main(args)
 
 
 if __name__ == "__main__":
