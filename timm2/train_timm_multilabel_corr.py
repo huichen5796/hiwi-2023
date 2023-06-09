@@ -28,7 +28,7 @@ import torchvision.utils
 
 import matplotlib.pyplot as plt
 
-from my_timm import create_dataset, create_dataset_from_file, create_loader, Mixup, FastCollateMixup, onehot_trans
+from my_timm import create_dataset, create_dataset_from_file, create_loader, Mixup, FastCollateMixup
 from timm.data import resolve_data_config, AugMixDataset
 from timm.models import create_model, safe_model_name, resume_checkpoint, load_checkpoint, model_parameters
 from timm.models.layers import convert_splitbn_model
@@ -256,9 +256,9 @@ def main(args):
 
     # setup loss function
     def train_loss_fn(output, target):
-        return LabelSmoothingCrossEntropy(output, onehot_trans(target)).cuda()
+        return LabelSmoothingCrossEntropy(output, target).cuda()
     def validate_loss_fn(output, target): 
-        return LabelSmoothingCrossEntropy(output, onehot_trans(target)).cuda()
+        return LabelSmoothingCrossEntropy(output, target).cuda()
 
     # setup checkpoint saver and eval metric tracking
     eval_metric = args.eval_metric
@@ -368,7 +368,7 @@ def train_one_epoch(
                 input, target = mixup_fn(input, target)
         if args.channels_last:
             input = input.contiguous(memory_format=torch.channels_last)
-
+        print(target)
         with amp_autocast():
             output = model(input)
             loss = loss_fn(output, target.float())

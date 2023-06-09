@@ -5,6 +5,7 @@ import datetime
 import re
 import time
 from onehot_transfer import onehot_trans
+import numpy as np
 
 class Corrector:
     def __init__(self, original_dir, out_dir, correct_data):
@@ -75,7 +76,15 @@ class Corrector:
             print("\r{}/{}|{}{}|{:.2f}s".format((i+1), len(df),
                   finish, need_do, dur), end='', flush=True)
 
-        df.to_csv(self.out_dir + '/' + os.path.basename(csv_path), index=False)
+        self.onehot_label(df).to_csv(self.out_dir + '/' + os.path.basename(csv_path), index=False)
+    
+    def onehot_label(self, df):
+        df_onehot = df.apply(lambda x: np.where(x == 1.0, np.array([1.0, 0.0, 0.0, 0.0]), x))
+        df_onehot = df_onehot.apply(lambda x: np.where(x == 0.0, np.array([0.0, 1.0, 0.0, 0.0]), x))
+        df_onehot = df_onehot.apply(lambda x: np.where(x == -1.0, np.array([0.0, 0.0, 1.0, 0.0]), x))
+        df_onehot = df_onehot.fillna(np.array([0.0, 0.0, 0.0, 1.0]))
+
+        return df_onehot
 
     def correct_in_batch(self):
         for csv_path in self.csv_list:
