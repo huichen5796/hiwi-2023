@@ -1,6 +1,22 @@
 # hiwi-2023
 
-DONE:
+## DONE:
+
+### Short to say:
+
+Labels für Atelectasis, Cardiomegaly, Consolidation, Edema, Pleural Effusion
+- original label in csv
+   - 1.0, 1.0, 0.0, 1.0, 1.0
+- corrected label in csv
+   - 1.0, 1.0, ***nan***, 1.0, 1.0
+- onehot label in csv
+   - "[1.0, 0.0, 0.0, 0.0]", "[1.0, 0.0, 0.0, 0.0]", "[0.0, 0.0, 0.0, 1.0]", "[1.0, 0.0, 0.0, 0.0]", "[1.0, 0.0, 0.0, 0.0]"
+- target
+   - array([1., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 0., 0.])
+- tensor
+   - tensor([[1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0]], device='cuda:0')
+
+### History
 
 - `data-local\bin\labels_correct.py` for correction of labels in all csvs and txts under `data-local\labels\chexpert`. Corrected datei will be saved under `data-local\labels\chexpert_correct_labels`. In 'log.txt' there is the correction history.
 - corrected labels will transformed to ONEHOT in `data-local\bin\labels_correct.py` to characterize 4 classes of each of 5 illnesses:
@@ -85,6 +101,6 @@ DONE:
 
 - as loss_fn is still bce used
 
-TODO:
+## TODO:
 
 - Train model in LUIS
