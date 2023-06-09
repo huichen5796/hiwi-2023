@@ -110,8 +110,8 @@ class Corrector:
 
 
 if __name__ == '__main__':
-    do = Corrector(original_dir='data-local\chexpert_frap_binary_valid.csv',
-                   out_dir='data-local/labels/chexpert_correct_labels_valid',
-                   correct_data='data-local/chexpert_valid.csv')
+    do = Corrector(original_dir='data-local\labels\chexpert',
+                   out_dir='data-local/labels/chexpert_correct_labels_train',
+                   correct_data='data-local/chexpert_train.csv')
     do.run()
     # pass
