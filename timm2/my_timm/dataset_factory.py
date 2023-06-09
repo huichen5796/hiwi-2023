@@ -4,14 +4,16 @@ import numpy as np
 import torchvision
 from torch.utils.data.sampler import BatchSampler, SubsetRandomSampler
 import torchvision.datasets
-import os, sys
+import os
+import sys
 from torchvision.datasets.vision import VisionDataset
 from torchvision.datasets.folder import default_loader
 from typing import Any, Callable, cast, Dict, List, Optional, Tuple
 import pandas as pd
 
-#from timm.data.dataset import IterableImageDataset, ImageDataset
-#from data_meanteacher import relabel_dataset, TwoStreamBatchSampler
+# from timm.data.dataset import IterableImageDataset, ImageDataset
+# from data_meanteacher import relabel_dataset, TwoStreamBatchSampler
+
 
 def _search_split(root, split):
     # look for sub-folder with name of split in root and use that if it exists
@@ -27,9 +29,12 @@ def _search_split(root, split):
 
 
 def assert_exactly_one(lst):
-    assert sum(int(bool(el)) for el in lst) == 1, ", ".join(str(el) for el in lst)
+    assert sum(int(bool(el)) for el in lst) == 1, ", ".join(str(el)
+                                                            for el in lst)
 
 # copied from torchvision.datasets.folder
+
+
 def has_file_allowed_extension(filename: str, extensions: Tuple[str, ...]) -> bool:
     """Checks if a file is an allowed extension.
 
@@ -45,7 +50,7 @@ def has_file_allowed_extension(filename: str, extensions: Tuple[str, ...]) -> bo
 
 def create_dataset(name, data_dir, classification_type, split='validation', search_split=True, is_training=False):
 
-    #assert_exactly_one([args.exclude_unlabeled, args.labeled_batch_size])
+    # assert_exactly_one([args.exclude_unlabeled, args.labeled_batch_size])
 
     # appends training/validation/test to root path if exists
     if search_split and os.path.isdir(data_dir):
@@ -53,7 +58,8 @@ def create_dataset(name, data_dir, classification_type, split='validation', sear
 
     if classification_type == 'multiclass':
         # histology: (224, 224), oct: random sizes
-        dataset = torchvision.datasets.ImageFolder(data_dir) # expects all images of same class in one subdirectory
+        # expects all images of same class in one subdirectory
+        dataset = torchvision.datasets.ImageFolder(data_dir)
     elif classification_type == 'multilabel':
         raise NotImplementedError
     else:
@@ -62,16 +68,14 @@ def create_dataset(name, data_dir, classification_type, split='validation', sear
     return dataset
 
 
-
 def create_dataset_from_file(name, data_dir, data_file, classification_type=None, split=None, search_split=False, is_training=False):
-    if name=='chexpert':
+    if name == 'chexpert':
         path, dir = os.path.split(data_dir)
         if dir.__contains__('CheXpert'):
             data_dir = path
         return CheXpert(data_dir, data_file)
     else:
         raise NotImplementedError
-
 
 
 class DatasetFromFile(VisionDataset):
@@ -110,18 +114,18 @@ class DatasetFromFile(VisionDataset):
             is_valid_file: Optional[Callable[[str], bool]] = None,
     ) -> None:
         super(DatasetFromFile, self).__init__(root, file, transform=transform,
-                                            target_transform=target_transform)
+                                              target_transform=target_transform)
 
         self.file = file
         self.classes = self._find_classes()
-        self.class_to_idx = {self.classes[i]: i for i in range(len(self.classes))}
+        self.class_to_idx = {self.classes[i]                             : i for i in range(len(self.classes))}
         self.samples = self._make_dataset()
         if len(self.samples) == 0:
             msg = "Found 0 files in subfolders of: {}\n".format(self.root)
             if extensions is not None:
-                msg += "Supported extensions are: {}".format(",".join(extensions))
+                msg += "Supported extensions are: {}".format(
+                    ",".join(extensions))
             raise RuntimeError(msg)
-
 
         self.loader = loader
         self.extensions = extensions
@@ -155,7 +159,6 @@ class DatasetFromFile(VisionDataset):
         return len(self.samples)
 
 
-
 class Histology(DatasetFromFile):
     def __init__(
             self,
@@ -166,7 +169,7 @@ class Histology(DatasetFromFile):
             target_transform: Optional[Callable] = None,
     ) -> None:
         super(DatasetFromFile, self).__init__(root, file, loader, transform=transform,
-                                            target_transform=target_transform)
+                                              target_transform=target_transform)
 
     def _find_classes(self):
         """
@@ -182,7 +185,8 @@ class Histology(DatasetFromFile):
             # Faster and available in Python 3.5 and above
             classes = [d.name for d in os.scandir(dir) if d.is_dir()]
         else:
-            classes = [d for d in os.listdir(dir) if os.path.isdir(os.path.join(dir, d))]
+            classes = [d for d in os.listdir(
+                dir) if os.path.isdir(os.path.join(dir, d))]
         classes.sort()
         class_to_idx = {classes[i]: i for i in range(len(classes))}
         return classes, class_to_idx
@@ -197,15 +201,16 @@ class CheXpert(DatasetFromFile):
             self,
             root: str,
             file: str,
-            loader: Callable[[str], Any]  = default_loader,
+            loader: Callable[[str], Any] = default_loader,
             transform: Optional[Callable] = None,
             target_transform: Optional[Callable] = None,
     ) -> None:
         super(CheXpert, self).__init__(root, file, loader, transform=transform,
-                                            target_transform=target_transform)
+                                       target_transform=target_transform)
 
     def _find_classes(self):
-        classes = ['Atelectasis', 'Cardiomegaly', 'Consolidation', 'Edema', 'Pleural Effusion']
+        classes = ['Atelectasis', 'Cardiomegaly',
+                   'Consolidation', 'Edema', 'Pleural Effusion']
         return classes
 
     def _make_dataset(self):
@@ -215,11 +220,12 @@ class CheXpert(DatasetFromFile):
         targets = np.array([self.flatten(item) for item in targets], dtype=np.float64)
         samples = [s for s in zip(imgfiles, targets)]
         return samples
-        
+
     def flatten(self, item):
         out = []
         for cla in item:
-          out.extend(eval(cla))
+            print(cla)
+            out.extend(eval(cla))
         return out
 
     def relabel_dataset(self, label_file, no_label_value):
@@ -231,13 +237,15 @@ class CheXpert(DatasetFromFile):
         outlier = []
         for it, (imgfile, target) in enumerate(self.samples):
             if imgfile in imgfiles:
-                 self.samples[it] = imgfile, target
-                 inlier.append(it)
+                self.samples[it] = imgfile, target
+                inlier.append(it)
             else:
                 num_classes = len(self.classes)
-                new_target = np.asarray(num_classes*[no_label_value], dtype=np.float64)
+                new_target = np.asarray(
+                    num_classes*[no_label_value], dtype=np.float64)
                 self.samples[it] = imgfile, new_target
                 outlier.append(it)
 
-        print(f'labeled samples: {len(inlier)} vs. unlabeled samples {len(outlier)}')
+        print(
+            f'labeled samples: {len(inlier)} vs. unlabeled samples {len(outlier)}')
         return inlier, outlier

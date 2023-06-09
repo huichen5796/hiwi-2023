@@ -111,7 +111,7 @@ class Corrector:
 
 if __name__ == '__main__':
     do = Corrector(original_dir='data-local\labels\chexpert',
-                   out_dir='data-local/labels/chexpert_correct_labels_list',
+                   out_dir='data-local/labels/chexpert_correct_labels',
                    correct_data='data-local/chexpert_train.csv')
     do.run()
     # pass
