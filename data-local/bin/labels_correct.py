@@ -75,7 +75,7 @@ class Corrector:
             dur = time.perf_counter() - start
             print("\r{}/{}|{}{}|{:.2f}s".format((i+1), len(df),
                   finish, need_do, dur), end='', flush=True)
-        df_onehot = df.applymap(self.onehot_trans)
+        df_onehot = df.applymap(self.onehot_trans_2)
         df_onehot.to_csv(self.out_dir + '/' +
                          os.path.basename(csv_path), index=False)
 
@@ -90,6 +90,19 @@ class Corrector:
             return [0.0, 0.0, 0.0, 1.0]
         else:
             return label
+    
+    def onehot_trans_2(self, label):
+        if label == 1.0:
+            return [1.0, 1.0]
+        elif label == 0.0:
+            return [0.0, 0.0]
+        elif label == -1.0:
+            return [1.0, 0.0]
+        elif pandas.isna(label):
+            return [0.0, 1.0]
+        else:
+            return label
+
 
     def correct_in_batch(self):
         for csv_path in self.csv_list:
@@ -110,8 +123,8 @@ class Corrector:
 
 
 if __name__ == '__main__':
-    do = Corrector(original_dir='data-local\labels\chexpert',
-                   out_dir='data-local/labels/chexpert_correct_labels_train',
-                   correct_data='data-local/chexpert_train.csv')
+    do = Corrector(original_dir='data-local\chexpert_frap_binary_valid.csv',
+                   out_dir='data-local/labels/chexpert_correct_labels_valid_2',
+                   correct_data='data-local/chexpert_valid.csv')
     do.run()
     # pass
